@@ -25,4 +25,16 @@ async def load(ctx, extension):
     loaded = await ctx.send("Successfully loaded")
     await loaded.delete()
 
+
+# UNLOADS COGS IN THE COG FILE OUT OF THE BOTS REACH
+@client.command()
+@commands.is_owner()
+async def unload(ctx, extension):
+    msg = await ctx.send("Will unload in a few seconds...")
+    await asyncio.sleep(5)
+    client.unload_extension(f'cogs.{extension}')
+    await msg.delete()
+    unloaded = await ctx.send("Successfully Unloaded")
+    await unloaded.delete()
+
 client.run(Token)
