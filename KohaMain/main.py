@@ -14,4 +14,15 @@ for filename in os.listdir('./cogs'):
     if filename.endswith('.py'):
         client.load_extension(f'cogs.{filename[:-3]}')
 
+# LOADS THE COGS IN THE COGS FILE INTO THE BOT FOR USE
+@client.command()
+@commands.is_owner()
+async def load(ctx, extension):
+    msg2 = await ctx.send("Will load in a few seconds...")
+    await asyncio.sleep(5)
+    client.load_extension(f'cogs.{extension}')
+    await msg2.delete()
+    loaded = await ctx.send("Successfully loaded")
+    await loaded.delete()
+
 client.run(Token)
