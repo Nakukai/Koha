@@ -23,5 +23,21 @@ class Main(commands.Cog):
         else:
             pass
 
+    @commands.command()
+    async def learn(self, ctx):
+        '''
+        LEARN COMMAND
+
+        This allows users to learn spells and implement them into their Kohalai.
+
+        Learning a spell allows you to yeild its power and damage, with some
+        defense included
+
+        Spells require Cari to be learnt based on how big or small the spell is.
+
+        It ranges from 100 Cari to 100,000,000 due to the huge spell 'Discharge'
+        '''
+        pass
+
 def setup(client):
     client.add_cog(Main(client))
