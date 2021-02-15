@@ -50,5 +50,18 @@ class Fun(commands.Cog):
         embed.set_footer(text="This is my honest opinion about your question")
         await ctx.send(embed=embed)
 
+    @commands.command()
+    async def love(self, ctx, *, question = None):
+        if question == None:
+            await ctx.send("Please ping someone in addition to the command.")
+        else:
+            embed = discord.Embed(
+                color=0XFF69B4,
+                title="The True Nature Of Love"
+            )
+            embed.add_field(name="The Intended Couple", value=f"{question}", inline=False)
+            embed.add_field(name="The Love Rate ", value=f"You love is `{(random.randint(1,100))}`%", inline=False)
+            await ctx.send(embed=embed)
+
 def setup(client):
     client.add_cog(Fun(client))
