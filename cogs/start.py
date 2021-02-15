@@ -3,7 +3,7 @@ from discord.ext import commands
 import json
 import os
 import random
-import datetime
+from datetime import datetime, date
 
 Prefix = "k!"
 Palettes = ["Koyoku", "Murato", "Kaiyoi", "Pinkai", "Kirayaka", "Mishizen", "Namikai"]
@@ -65,8 +65,9 @@ class Start(commands.Cog):
         if InSystem == True:
             await ctx.send("You're already part of the colors.")
         elif InSystem == False:
-            Days = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S') - ctx.author.created_at
-            if Days < 30:
+            Days = datetime.date.utcnow() - ctx.author.created_at
+            
+            if Days <= 30:
                 TooYoung = discord.Embed(color=0xFFFF00, description="We cannot accept you into our system as your account is too young. "
                                                                     f"Please type {Prefix}!verify to join our verification server for accounts about 2 weeks old.")
             elif Days > 30:
