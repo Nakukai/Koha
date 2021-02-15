@@ -22,3 +22,6 @@ class Main(commands.Cog):
             await ctx.send("Please mention an opponent with the command")
         else:
             pass
+
+def setup(client):
+    client.add_cog(Main(client))
