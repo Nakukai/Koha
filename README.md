@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="1080px" src="Assets/727053.png">
+  <img width="1080px" src="Assets/brand.png">
 </p>
 
 # Koha
