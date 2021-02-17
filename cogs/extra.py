@@ -14,5 +14,13 @@ class Extra(commands.Cog):
                         ("https://discord.com/api/oauth2/authorize?client_id=783865415746977824&permissions=3533888&scope=bot"))
         await ctx.send(embed=Invitation)
 
+    @commands.command()
+    async def support(self, ctx):
+        Mayuport = discord.Embed(
+            color=0xFF0000, 
+            description="**Have you found any bugs or just need help with something?**\n"
+                        "[Tap here to join](%s)" % ("https://discord.gg/5zpHR7JpZA"))
+        await ctx.send(embed=Mayuport)
+
 def setup(client):
     client.add_cog(Extra(client))
