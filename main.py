@@ -3,9 +3,9 @@ import discord
 from discord.ext import commands
 import asyncio
 
-Token = 'NzgzODY1NDE1NzQ2OTc3ODI0.X8g9jg.HjwhIosmZ3BiDjT5BcHMkthKy9M'
+Token = ''
 client = commands.Bot(command_prefix=["K!", "k!"], case_insensitive=True)
-# client.remove_command('help')
+client.remove_command('help')
 Prefix = "k!"
 
 # EVENTS THAT OCCUR ON STARTUP
