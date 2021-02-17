@@ -22,5 +22,9 @@ class Extra(commands.Cog):
                         "[Tap here to join](%s)" % ("https://discord.gg/5zpHR7JpZA"))
         await ctx.send(embed=Mayuport)
 
+    @commands.command()
+    async def supporter(sef, ctx):
+        await ctx.send("**Coming in Mayu V 0.0.3**")
+
 def setup(client):
     client.add_cog(Extra(client))
