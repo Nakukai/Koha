@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
 from typing import Optional
+import random
 
 class Fun(commands.Cog):
     def __init__(self, client):
